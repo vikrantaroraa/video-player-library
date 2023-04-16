@@ -1,0 +1,40 @@
+.icon-and-volume-range-container {
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  /* height: 100%; */
+  color: white;
+}
+
+.volume-high-and-mute-icon-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex: 0.6;
+}
+
+.volume-high-and-mute-icon-container:hover {
+  background-color: var(--iconHoverBackgroundColor);
+}
+
+.volume-range-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2.5;
+}
+
+.volume-range-input {
+  display: flex;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+
+  /* for vertical */
+  /* appearance: slider-vertical;
+  height: 90px; */
+}

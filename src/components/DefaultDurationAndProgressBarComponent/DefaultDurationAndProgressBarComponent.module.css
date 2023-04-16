@@ -1,0 +1,29 @@
+.duration-and-progress-bar {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.duration-container {
+  display: flex;
+  align-items: right;
+  justify-content: center;
+  flex: 1;
+}
+
+.progress-bar-container {
+  display: flex;
+  flex: 10;
+  height: 100%;
+  width: 100%;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.progress {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
