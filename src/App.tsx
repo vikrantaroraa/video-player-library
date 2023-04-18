@@ -3,15 +3,19 @@ import MyPlayAndPauseComponent from "./components/user-components/MyPlayAndPause
 import MyDurationAndProgressBarComponentComponent from "./components/user-components/MyDurationAndProgressBarComponentComponent";
 import MyVolumeComponent from "./components/user-components/MyVolumeComponent";
 import MyPlaybackSpeedComponent from "./components/user-components/MyPlaybackSpeedComponent";
+import MyPlayPauseAndDurationComponent from "./components/user-components/MyPlayPauseAndDurationComponent";
+
 import CustomVideoPlayer from "./CustomVideoPlayer";
 import "./App.css";
-import { forwardRef } from "react";
+import { forwardRef, useRef } from "react";
 
 export default function App() {
+  const videoPlayerRef = useRef(null);
   return (
     <div className="App">
       <CustomVideoPlayer
-        controlsVariant={"verticalLeftVariant"}
+        ref={videoPlayerRef}
+        controlsVariant={"horizontalTopVariant"}
         controlsContainerStyle={{
           backgroundColor: "#01da72",
           opacity: 0.95,
@@ -19,6 +23,11 @@ export default function App() {
           gap: 5,
           border: "1px solid #01da72",
         }}
+        // USER CUSTOM COMPONENT
+        // UserCustomComponent={(props) => (
+        //   <MyPlayPauseAndDurationComponent {...props} />
+        // )}
+
         // play and pause component props start (check how to change width from here only)
 
         // UserPlayIcon={() => <h4>Play</h4>}
@@ -74,7 +83,7 @@ export default function App() {
           alignItems: "center",
           justifyContent: "center",
           height: "100%",
-          width: "20%",
+          width: "50%",
         }}
         volumeIconStyle={{
           color: "white",

@@ -40,16 +40,18 @@ const CustomVideoPlayer = ({
   userPlaybackSpeedOptions,
   userDefaultSelectedSpeedOption,
   playbackSpeedSelectStyle,
-  playbackSpeedSelectOptionsStyle
+  playbackSpeedSelectOptionsStyle,
+
+  // user custom component prop
+  UserCustomComponent,
 }: CustomVideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [videoVolumeBeforeMute, setVideoVolumeBeforeMute] = useState<number>(0);
   const [videoDuration, setVideoDuration] = useState<number>(0);
   const [videoProgress, setVideoProgress] = useState<number>(0);
-  const [videoProgressInSeconds, setVideoProgressInSeconds] = useState<number>(
-    0
-  );
+  const [videoProgressInSeconds, setVideoProgressInSeconds] =
+    useState<number>(0);
   const video = useRef();
   const volumeRangeInput = useRef();
   const playbackSpeedOptions = [
@@ -60,7 +62,7 @@ const CustomVideoPlayer = ({
     "1.25",
     "1.5",
     "1.75",
-    "2"
+    "2",
   ];
 
   const controlsVariantArray = {
@@ -68,117 +70,142 @@ const CustomVideoPlayer = ({
       controlsContainerStyle: {
         width: "100%",
         bottom: 0,
-        left: 0
+        left: 0,
       },
       playAndPauseVariantStyle: {
         height: "100%",
-        width: "10%"
+        width: "10%",
       },
       durationAndProgressBarVariantStyle: {
         height: "100%",
-        width: "60%"
+        width: "60%",
       },
       volumeIconAndRangeVariantStyle: {
         height: "100%",
-        width: "20%"
+        width: "20%",
       },
-      volumeRangeStyle: {
-        appearance: "slider-horizontal"
+      volumeIconVariantStyle: {
+        width: "20%",
+      },
+      volumeRangeInputContainerVariantStyle: {
+        width: "80%",
+      },
+      volumeRangeVariantStyle: {
+        appearance: "slider-horizontal",
+        width: "100%",
       },
       playbackSelectStyle: {
         padding: "0 5px",
-        height: "100%"
-      }
+        height: "100%",
+      },
     },
     horizontalTopVariant: {
       controlsContainerStyle: {
         width: "100%",
         top: 0,
-        left: 0
+        left: 0,
       },
       playAndPauseVariantStyle: {
         height: "100%",
-        width: "10%"
+        width: "10%",
       },
       durationAndProgressBarVariantStyle: {
         height: "100%",
-        width: "60%"
+        width: "60%",
       },
       volumeIconAndRangeVariantStyle: {
         height: "100%",
-        width: "20%"
+        width: "20%",
       },
-      volumeRangeStyle: {
-        appearance: "slider-horizontal"
+      volumeIconVariantStyle: {
+        width: "20%",
+      },
+      volumeRangeInputContainerVariantStyle: {
+        width: "80%",
+      },
+      volumeRangeVariantStyle: {
+        appearance: "slider-horizontal",
+        width: "100%",
       },
       playbackSelectStyle: {
         padding: "0 5px",
-        height: "100%"
-      }
+        height: "100%",
+      },
     },
     verticalLeftVariant: {
       controlsContainerStyle: {
         flexDirection: "column",
         height: "100%",
         width: "28px",
-        left: 0
+        left: 0,
       },
       playAndPauseVariantStyle: {
         height: "10%",
-        width: "100%"
+        width: "100%",
       },
       durationAndProgressBarVariantStyle: {
         width: "40%",
         height: "55%",
-        flexDirection: "column"
-        // backgroundColor: "red"
+        flexDirection: "column",
       },
       volumeIconAndRangeVariantStyle: {
         width: "100%",
-        height: "26%",
-        flexDirection: "column-reverse"
+        height: "25%",
+        flexDirection: "column-reverse",
       },
-      volumeRangeStyle: {
+      volumeIconVariantStyle: {
+        height: "20%",
+      },
+      volumeRangeInputContainerVariantStyle: {
+        height: "80%",
+      },
+      volumeRangeVariantStyle: {
         appearance: "slider-vertical",
-        minHeight: "70px"
+        height: "100%",
       },
       playbackSelectStyle: {
         padding: 0,
         height: "10%",
-        width: "100%"
-      }
+        width: "100%",
+      },
     },
     verticalRightVariant: {
       controlsContainerStyle: {
         flexDirection: "column",
         height: "100%",
         width: "26px",
-        right: 0
+        right: 0,
       },
       playAndPauseVariantStyle: {
         height: "10%",
-        width: "100%"
+        width: "100%",
       },
       durationAndProgressBarVariantStyle: {
-        width: "100%",
+        width: "40%",
         height: "55%",
-        flexDirection: "column"
+        flexDirection: "column",
       },
       volumeIconAndRangeVariantStyle: {
         width: "100%",
         height: "25%",
-        flexDirection: "column-reverse"
+        flexDirection: "column-reverse",
       },
-      volumeRangeStyle: {
+      volumeIconVariantStyle: {
+        height: "20%",
+      },
+      volumeRangeInputContainerVariantStyle: {
+        height: "80%",
+      },
+      volumeRangeVariantStyle: {
         appearance: "slider-vertical",
-        minHeight: "70px"
+        height: "100%",
       },
       playbackSelectStyle: {
         padding: 0,
         height: "10%",
-        width: "100%"
-      }
-    }
+        width: "100%",
+      },
+    },
   };
 
   const toggleVolume = () => {
@@ -295,9 +322,28 @@ const CustomVideoPlayer = ({
           className={styles["controls-container"]}
           style={{
             ...controlsContainerStyle,
-            ...controlsVariantArray[controlsVariant].controlsContainerStyle
+            ...controlsVariantArray[controlsVariant].controlsContainerStyle,
           }}
         >
+          {UserCustomComponent && (
+            <UserCustomComponent
+              isPlaying={isPlaying}
+              playAndPauseVideo={playAndPauseVideo}
+              playAndPauseStyle={playAndPauseStyle}
+              UserPlayIcon={UserPlayIcon}
+              UserPauseIcon={UserPauseIcon}
+              seekVideo={seekVideo}
+              videoProgressInSeconds={videoProgressInSeconds}
+              videoProgress={videoProgress}
+              videoDuration={videoDuration}
+              videoDurationStyle={videoDurationStyle}
+              progressBarStyle={progressBarStyle}
+              progressBarContainerStyle={progressBarContainerStyle}
+              durationAndProgressBarStyle={durationAndProgressBarStyle}
+              controlsVariantArray={controlsVariantArray}
+              controlsVariant={controlsVariant}
+            />
+          )}
           {UserPlayAndPauseComponent ? (
             <UserPlayAndPauseComponent
               UserPlayIcon={UserPlayIcon}

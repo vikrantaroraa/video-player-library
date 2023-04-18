@@ -34,4 +34,7 @@ export interface CustomVideoPlayerProps {
   userDefaultSelectedSpeedOption?: string;
   playbackSpeedSelectStyle?: object;
   playbackSpeedSelectOptionsStyle?: object;
+
+  // user custom component
+  UserCustomComponent?: ReactNode;
 }

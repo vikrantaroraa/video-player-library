@@ -10,7 +10,7 @@ const DefaultPlayAndPauseComponent = ({
   playAndPauseVideo,
   isPlaying,
   controlsVariantArray,
-  controlsVariant
+  controlsVariant,
 }) => {
   return (
     <div
@@ -18,7 +18,7 @@ const DefaultPlayAndPauseComponent = ({
       className={styles["play-and-pause-button-container"]}
       style={{
         ...playAndPauseStyle,
-        ...controlsVariantArray[controlsVariant].playAndPauseVariantStyle
+        ...controlsVariantArray[controlsVariant].playAndPauseVariantStyle,
       }}
     >
       {isPlaying ? (

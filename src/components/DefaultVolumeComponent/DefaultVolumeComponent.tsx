@@ -16,7 +16,7 @@ const DefaultVolumeComponent = forwardRef(
       UserVolumeMuteIcon,
       volumeIconStyle,
       volumeRangeStyle,
-      volumeIconAndRangeStyle
+      volumeIconAndRangeStyle,
     },
     ref
   ) => {
@@ -26,13 +26,16 @@ const DefaultVolumeComponent = forwardRef(
         style={{
           ...volumeIconAndRangeStyle,
           ...controlsVariantArray[controlsVariant]
-            .volumeIconAndRangeVariantStyle
+            .volumeIconAndRangeVariantStyle,
         }}
       >
         <span
           className={styles["volume-high-and-mute-icon-container"]}
           onClick={toggleVolume}
-          style={volumeIconStyle}
+          style={{
+            ...volumeIconStyle,
+            ...controlsVariantArray[controlsVariant].volumeIconVariantStyle,
+          }}
         >
           {isMuted ? (
             UserVolumeMuteIcon ? (
@@ -46,7 +49,13 @@ const DefaultVolumeComponent = forwardRef(
             <FontAwesomeIcon icon={faVolumeHigh} />
           )}
         </span>
-        <div className={styles["volume-range-input-container"]}>
+        <div
+          className={styles["volume-range-input-container"]}
+          style={{
+            ...controlsVariantArray[controlsVariant]
+              .volumeRangeInputContainerVariantStyle,
+          }}
+        >
           <input
             ref={ref}
             onChange={(e) => changeVolume(e)}
@@ -56,7 +65,7 @@ const DefaultVolumeComponent = forwardRef(
             max={10}
             style={{
               ...volumeRangeStyle,
-              ...controlsVariantArray[controlsVariant].volumeRangeStyle
+              ...controlsVariantArray[controlsVariant].volumeRangeVariantStyle,
             }}
           />
         </div>
