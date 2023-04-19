@@ -94,7 +94,7 @@ const CustomVideoPlayer = ({
         appearance: "slider-horizontal",
         width: "100%",
       },
-      playbackSelectStyle: {
+      playbackSelectVariantStyle: {
         padding: "0 5px",
         height: "100%",
       },
@@ -127,7 +127,7 @@ const CustomVideoPlayer = ({
         appearance: "slider-horizontal",
         width: "100%",
       },
-      playbackSelectStyle: {
+      playbackSelectVariantStyle: {
         padding: "0 5px",
         height: "100%",
       },
@@ -163,7 +163,7 @@ const CustomVideoPlayer = ({
         appearance: "slider-vertical",
         height: "100%",
       },
-      playbackSelectStyle: {
+      playbackSelectVariantStyle: {
         padding: 0,
         height: "10%",
         width: "100%",
@@ -173,7 +173,7 @@ const CustomVideoPlayer = ({
       controlsContainerStyle: {
         flexDirection: "column",
         height: "100%",
-        width: "26px",
+        width: "28px",
         right: 0,
       },
       playAndPauseVariantStyle: {
@@ -200,7 +200,7 @@ const CustomVideoPlayer = ({
         appearance: "slider-vertical",
         height: "100%",
       },
-      playbackSelectStyle: {
+      playbackSelectVariantStyle: {
         padding: 0,
         height: "10%",
         width: "100%",
@@ -299,6 +299,7 @@ const CustomVideoPlayer = ({
       <div className={styles["video-player-and-controls-container"]}>
         <div className={styles["player-container"]}>
           <video
+            aria-label="Video Player"
             onLoadedMetadata={calculateVideoDuration}
             onTimeUpdate={calculateVideoProgress}
             onEnded={resetVariables}
@@ -325,7 +326,8 @@ const CustomVideoPlayer = ({
             ...controlsVariantArray[controlsVariant].controlsContainerStyle,
           }}
         >
-          {UserCustomComponent && (
+          {/* Commenting for Now - Need to find a better a way to implement completely customisable components using useimperativeHandle */}
+          {/* {UserCustomComponent && (
             <UserCustomComponent
               isPlaying={isPlaying}
               playAndPauseVideo={playAndPauseVideo}
@@ -343,7 +345,7 @@ const CustomVideoPlayer = ({
               controlsVariantArray={controlsVariantArray}
               controlsVariant={controlsVariant}
             />
-          )}
+          )} */}
           {UserPlayAndPauseComponent ? (
             <UserPlayAndPauseComponent
               UserPlayIcon={UserPlayIcon}

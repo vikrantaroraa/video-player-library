@@ -1,14 +1,3 @@
 .playback-speed-select {
   cursor: pointer;
-  width: 10%;
-  /* outline: none; */
-
-  /* for horizontal alignment */
-  /* height: 100%;
-  padding: var(--playbackSelectPaddingTopBottom)
-    var(--playbackSelectPaddingLeftRight); */
-
-  /* for vertical alignment */
-  /* padding: 0;
-  width: 100%; */
 }

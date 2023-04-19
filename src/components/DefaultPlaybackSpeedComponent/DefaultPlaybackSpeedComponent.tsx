@@ -9,7 +9,7 @@ const DefaultPlaybackSpeedComponent = ({
   controlsVariantArray,
   controlsVariant,
   playbackSpeedSelectStyle,
-  playbackSpeedSelectOptionsStyle
+  playbackSpeedSelectOptionsStyle,
 }) => {
   const optionsArray = userPlaybackSpeedOptions
     ? userPlaybackSpeedOptions
@@ -27,7 +27,7 @@ const DefaultPlaybackSpeedComponent = ({
       defaultValue={defaultSelectedSpeedValue}
       style={{
         ...playbackSpeedSelectStyle,
-        ...controlsVariantArray[controlsVariant].playbackSelectStyle
+        ...controlsVariantArray[controlsVariant].playbackSelectVariantStyle,
       }}
     >
       {optionsArray.map((speed, index) => (

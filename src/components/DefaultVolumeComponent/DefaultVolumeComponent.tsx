@@ -30,6 +30,7 @@ const DefaultVolumeComponent = forwardRef(
         }}
       >
         <span
+          title={isMuted ? "Muted" : "Volume"}
           className={styles["volume-high-and-mute-icon-container"]}
           onClick={toggleVolume}
           style={{

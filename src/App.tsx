@@ -15,7 +15,7 @@ export default function App() {
     <div className="App">
       <CustomVideoPlayer
         ref={videoPlayerRef}
-        controlsVariant={"horizontalTopVariant"}
+        controlsVariant={"horizontalBottomVariant"}
         controlsContainerStyle={{
           backgroundColor: "#01da72",
           opacity: 0.95,
@@ -23,10 +23,11 @@ export default function App() {
           gap: 5,
           border: "1px solid #01da72",
         }}
-        // USER CUSTOM COMPONENT
+        // USER CUSTOM COMPONENT STARTS (DO NOT USE FOR NOW)
         // UserCustomComponent={(props) => (
         //   <MyPlayPauseAndDurationComponent {...props} />
         // )}
+        // USER CUSTOM COMPONENT ENDS
 
         // play and pause component props start (check how to change width from here only)
 
@@ -36,7 +37,6 @@ export default function App() {
         //   <MyPlayAndPauseComponent {...props} />
         // )}
         playAndPauseStyle={{
-          // backgroundColor: "lightpink",
           borderRadius: 2,
           color: "#fff",
           fontSize: 16,
