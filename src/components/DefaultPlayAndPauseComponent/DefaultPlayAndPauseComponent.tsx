@@ -12,8 +12,16 @@ const DefaultPlayAndPauseComponent = ({
   controlsVariantArray,
   controlsVariant,
 }) => {
+  const onKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      playAndPauseVideo();
+    }
+  };
   return (
     <div
+      role="button"
+      tabIndex={"0"}
+      onKeyDown={onKeyDown}
       onClick={playAndPauseVideo}
       className={styles["play-and-pause-button-container"]}
       style={{

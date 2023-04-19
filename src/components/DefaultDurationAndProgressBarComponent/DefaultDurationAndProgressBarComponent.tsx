@@ -9,9 +9,10 @@ const DefaultDurationAndProgressBarComponent = ({
   videoProgress,
   progressBarStyle,
   seekVideo,
+  seekVideoOnTabFocus,
   durationAndProgressBarStyle,
   controlsVariantArray,
-  controlsVariant
+  controlsVariant,
 }) => {
   return (
     <div
@@ -19,7 +20,7 @@ const DefaultDurationAndProgressBarComponent = ({
       style={{
         ...durationAndProgressBarStyle,
         ...controlsVariantArray[controlsVariant]
-          .durationAndProgressBarVariantStyle
+          .durationAndProgressBarVariantStyle,
       }}
     >
       <div className={styles["duration-container"]} style={videoDurationStyle}>
@@ -27,6 +28,9 @@ const DefaultDurationAndProgressBarComponent = ({
       </div>
 
       <div
+        role="progressbar"
+        tabIndex={"0"}
+        onKeyDown={(event) => seekVideoOnTabFocus(event)}
         onClick={(event) => seekVideo(event)}
         className={styles["progress-bar-container"]}
         style={progressBarContainerStyle}
@@ -40,7 +44,7 @@ const DefaultDurationAndProgressBarComponent = ({
             width: controlsVariant.includes("horizontal")
               ? `${videoProgress}%`
               : "100%",
-            ...progressBarStyle
+            ...progressBarStyle,
           }}
         ></div>
       </div>

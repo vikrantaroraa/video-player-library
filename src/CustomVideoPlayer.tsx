@@ -270,6 +270,18 @@ const CustomVideoPlayer = ({
     // console.log("Seek to time:", seekToTime);
   };
 
+  const seekVideoOnTabFocus = (event) => {
+    if (event.key === "ArrowLeft") {
+      video.current.currentTime = video.current.currentTime - Number(5);
+      return;
+    }
+
+    if (event.key === "ArrowRight") {
+      video.current.currentTime = video.current.currentTime + Number(5);
+      return;
+    }
+  };
+
   const calculateVideoProgress = () => {
     if (!isNaN(video.current.duration)) {
       const videoCurrentTime = video.current.currentTime;
@@ -326,26 +338,6 @@ const CustomVideoPlayer = ({
             ...controlsVariantArray[controlsVariant].controlsContainerStyle,
           }}
         >
-          {/* Commenting for Now - Need to find a better a way to implement completely customisable components using useimperativeHandle */}
-          {/* {UserCustomComponent && (
-            <UserCustomComponent
-              isPlaying={isPlaying}
-              playAndPauseVideo={playAndPauseVideo}
-              playAndPauseStyle={playAndPauseStyle}
-              UserPlayIcon={UserPlayIcon}
-              UserPauseIcon={UserPauseIcon}
-              seekVideo={seekVideo}
-              videoProgressInSeconds={videoProgressInSeconds}
-              videoProgress={videoProgress}
-              videoDuration={videoDuration}
-              videoDurationStyle={videoDurationStyle}
-              progressBarStyle={progressBarStyle}
-              progressBarContainerStyle={progressBarContainerStyle}
-              durationAndProgressBarStyle={durationAndProgressBarStyle}
-              controlsVariantArray={controlsVariantArray}
-              controlsVariant={controlsVariant}
-            />
-          )} */}
           {UserPlayAndPauseComponent ? (
             <UserPlayAndPauseComponent
               UserPlayIcon={UserPlayIcon}
@@ -370,6 +362,7 @@ const CustomVideoPlayer = ({
           {UserDurationAndProgressBarComponent ? (
             <UserDurationAndProgressBarComponent
               seekVideo={seekVideo}
+              seekVideoOnTabFocus={seekVideoOnTabFocus}
               videoProgressInSeconds={videoProgressInSeconds}
               videoDuration={videoDuration}
               videoProgress={videoProgress}
@@ -381,6 +374,7 @@ const CustomVideoPlayer = ({
           ) : (
             <DefaultDurationAndProgressBarComponent
               seekVideo={seekVideo}
+              seekVideoOnTabFocus={seekVideoOnTabFocus}
               videoProgressInSeconds={videoProgressInSeconds}
               videoDuration={videoDuration}
               videoProgress={videoProgress}

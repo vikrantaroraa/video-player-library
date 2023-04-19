@@ -1,6 +1,7 @@
 // @ts-nocheck
 interface MyDurationAndProgressBarComponentComponentProps {
   seekVideo: () => void;
+  seekVideoOnTabFocus: () => void;
   videoProgressInSeconds: number;
   videoProgress: number;
   videoDuration: number;
@@ -12,19 +13,20 @@ interface MyDurationAndProgressBarComponentComponentProps {
 
 const MyDurationAndProgressBarComponentComponent = ({
   seekVideo,
+  seekVideoOnTabFocus,
   videoProgressInSeconds,
   videoProgress,
   videoDuration,
   progressBarStyle,
   progressBarContainerStyle,
   videoDurationStyle,
-  durationAndProgressBarStyle
+  durationAndProgressBarStyle,
 }: MyDurationAndProgressBarComponentComponentProps) => {
   return (
     <div
       style={{
         display: "flex",
-        gap: 10
+        gap: 10,
       }}
     >
       <div className="video-duration">
@@ -33,7 +35,10 @@ const MyDurationAndProgressBarComponentComponent = ({
       <div className="video-progress">
         {/* <progress value={videoProgress.toFixed(0)} max={100} /> */}
         <input
-          onChange={(event) => seekVideo(event)}
+          onChange={(event) => {
+            seekVideo(event);
+            seekVideoOnTabFocus(event);
+          }}
           type="range"
           value={videoProgress.toFixed(0)}
           min={0}

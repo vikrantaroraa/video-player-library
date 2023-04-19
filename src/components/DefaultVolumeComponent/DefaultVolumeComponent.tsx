@@ -20,6 +20,11 @@ const DefaultVolumeComponent = forwardRef(
     },
     ref
   ) => {
+    const onKeyDown = (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        toggleVolume();
+      }
+    };
     return (
       <div
         className={styles["icon-and-volume-range-container"]}
@@ -30,6 +35,9 @@ const DefaultVolumeComponent = forwardRef(
         }}
       >
         <span
+          role="button"
+          tabIndex={"0"}
+          onKeyDown={onKeyDown}
           title={isMuted ? "Muted" : "Volume"}
           className={styles["volume-high-and-mute-icon-container"]}
           onClick={toggleVolume}

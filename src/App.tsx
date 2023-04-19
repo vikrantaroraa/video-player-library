@@ -7,14 +7,12 @@ import MyPlayPauseAndDurationComponent from "./components/user-components/MyPlay
 
 import CustomVideoPlayer from "./CustomVideoPlayer";
 import "./App.css";
-import { forwardRef, useRef } from "react";
+import { forwardRef } from "react";
 
 export default function App() {
-  const videoPlayerRef = useRef(null);
   return (
     <div className="App">
       <CustomVideoPlayer
-        ref={videoPlayerRef}
         controlsVariant={"horizontalBottomVariant"}
         controlsContainerStyle={{
           backgroundColor: "#01da72",
@@ -116,7 +114,6 @@ export default function App() {
           fontWeight: 500,
           backgroundColor: "rgba(0,0,0,0.2)",
           height: "auto",
-          outline: "none",
           width: "10%",
         }}
         playbackSpeedSelectOptionsStyle={{
