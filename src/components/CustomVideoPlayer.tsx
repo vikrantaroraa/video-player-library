@@ -1,17 +1,18 @@
 // @ts-nocheck
-import DefaultPlayAndPauseComponent from "./components/DefaultPlayAndPauseComponent/DefaultPlayAndPauseComponent";
-import DefaultDurationAndProgressBarComponent from "./components/DefaultDurationAndProgressBarComponent/DefaultDurationAndProgressBarComponent";
-import DefaultVolumeComponent from "./components/DefaultVolumeComponent/DefaultVolumeComponent";
-import DefaultPlaybackSpeedComponent from "./components/DefaultPlaybackSpeedComponent/DefaultPlaybackSpeedComponent";
+import DefaultPlayAndPauseComponent from "src/components/reusable/DefaultPlayAndPauseComponent";
+import DefaultDurationAndProgressBarComponent from "src/components/reusable/DefaultDurationAndProgressBarComponent";
+import DefaultVolumeComponent from "src/components/reusable/DefaultVolumeComponent";
+import DefaultPlaybackSpeedComponent from "src/components/reusable/DefaultPlaybackSpeedComponent";
 import { useEffect, useRef, useState } from "react";
-import { CustomVideoPlayerProps } from "./CustomVideoPlayer.interface";
-import styles from "./CustomVideoPlayer.module.css";
-import "./CustomVideoPlayer.module.css";
+import { CustomVideoPlayerProps } from "src/CustomVideoPlayer.interface";
+import styles from "src/components/CustomVideoPlayer.module.css";
 const CustomVideoPlayer = ({
+  // videoUrl = "https://www.w3schools.com/tags/movie.mp4",
+  // videoUrl = "https://www.w3schools.com/tags/mov_bbb.mp4",
   videoUrl = "https://jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
 
   // controls container props
-  controlsVariant = "horizontalBottomVariant",
+  controlsVariant = "bottom",
   controlsContainerStyle,
 
   // play and pause props
@@ -66,7 +67,7 @@ const CustomVideoPlayer = ({
   ];
 
   const controlsVariantArray = {
-    horizontalBottomVariant: {
+    bottom: {
       controlsContainerStyle: {
         width: "100%",
         bottom: 0,
@@ -99,7 +100,7 @@ const CustomVideoPlayer = ({
         height: "100%",
       },
     },
-    horizontalTopVariant: {
+    top: {
       controlsContainerStyle: {
         width: "100%",
         top: 0,
@@ -132,7 +133,7 @@ const CustomVideoPlayer = ({
         height: "100%",
       },
     },
-    verticalLeftVariant: {
+    verticalLeft: {
       controlsContainerStyle: {
         flexDirection: "column",
         height: "100%",
@@ -169,7 +170,7 @@ const CustomVideoPlayer = ({
         width: "100%",
       },
     },
-    verticalRightVariant: {
+    verticalRight: {
       controlsContainerStyle: {
         flexDirection: "column",
         height: "100%",
@@ -248,7 +249,6 @@ const CustomVideoPlayer = ({
   };
 
   const calculateVideoDuration = () => {
-    // console.log(video.current);
     setVideoDuration(video.current.duration.toFixed(0));
   };
 
@@ -257,17 +257,9 @@ const CustomVideoPlayer = ({
     const totalWidth = progressBarContainer.width;
     const width = event.clientX - progressBarContainer.left; //x position within the element.
     const percent_complete = (width / totalWidth) * 100;
-    // console.log(
-    //   "width, percent complete: ",
-    //   width,
-    //   percent_complete.toFixed(0)
-    // );
-
     const totalVideoDuration = video.current.duration;
     const seekToTime = (percent_complete * totalVideoDuration) / 100;
     video.current.currentTime = seekToTime;
-    // console.log(totalVideoDuration);
-    // console.log("Seek to time:", seekToTime);
   };
 
   const seekVideoOnTabFocus = (event) => {
@@ -289,8 +281,6 @@ const CustomVideoPlayer = ({
       const progress = percent_complete * 100;
       setVideoProgress(progress);
       setVideoProgressInSeconds(videoCurrentTime.toFixed(0));
-      // console.log("DURATION: ", progress);
-      // use percent_complete to draw a progress bar
     }
   };
   useEffect(() => {
@@ -321,14 +311,6 @@ const CustomVideoPlayer = ({
             height="100%"
           >
             <source src={videoUrl} type="video/mp4" />
-            {/* <source
-              src="https://www.w3schools.com/tags/movie.mp4"
-              type="video/mp4"
-            /> */}
-            {/* <source
-              src="https://www.w3schools.com/tags/mov_bbb.mp4"
-              type="video/mp4"
-            /> */}
           </video>
         </div>
         <div

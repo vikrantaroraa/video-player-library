@@ -1,5 +1,5 @@
 // @ts-nocheck
-import styles from "./DefaultPlaybackSpeedComponent.module.css";
+import styles from "src/components/reusable/DefaultPlaybackSpeedComponent/index.module.css";
 
 const DefaultPlaybackSpeedComponent = ({
   playbackSpeedOptions,

@@ -1,4 +1,4 @@
-.icon-and-volume-range-container {
+.volume-container {
   display: flex;
   width: 20%;
   align-items: center;
@@ -8,7 +8,7 @@
   color: white;
 }
 
-.volume-high-and-mute-icon-container {
+.icon-container {
   height: 100%;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-.volume-high-and-mute-icon-container:hover {
+.icon-container:hover {
   background-color: var(--iconHoverBackgroundColor);
 }
 

@@ -2,7 +2,7 @@
   --iconHoverBackgroundColor: #0aa356;
   /* --playAndPauseButtonContainerHeight: 100%;s */
 }
-.play-and-pause-button-container {
+.button-container {
   /* height: var(--playAndPauseButtonContainerHeight); */
   display: flex;
   align-items: center;
@@ -10,6 +10,6 @@
   cursor: pointer;
 }
 
-.play-and-pause-button-container:hover {
+.button-container:hover {
   background-color: var(--iconHoverBackgroundColor);
 }

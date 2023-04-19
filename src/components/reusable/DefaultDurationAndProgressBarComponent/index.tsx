@@ -1,5 +1,5 @@
 // @ts-nocheck
-import styles from "./DefaultDurationAndProgressBarComponent.module.css";
+import styles from "src/components/reusable/DefaultDurationAndProgressBarComponent/index.module.css";
 
 const DefaultDurationAndProgressBarComponent = ({
   videoDurationStyle,

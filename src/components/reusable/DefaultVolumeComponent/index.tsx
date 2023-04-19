@@ -2,7 +2,7 @@
 import { faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { forwardRef } from "react";
-import styles from "./DefaultVolumeComponent.module.css";
+import styles from "src/components/reusable/DefaultVolumeComponent/index.module.css";
 
 const DefaultVolumeComponent = forwardRef(
   (
@@ -27,7 +27,7 @@ const DefaultVolumeComponent = forwardRef(
     };
     return (
       <div
-        className={styles["icon-and-volume-range-container"]}
+        className={styles["volume-container"]}
         style={{
           ...volumeIconAndRangeStyle,
           ...controlsVariantArray[controlsVariant]
@@ -39,7 +39,7 @@ const DefaultVolumeComponent = forwardRef(
           tabIndex={"0"}
           onKeyDown={onKeyDown}
           title={isMuted ? "Muted" : "Volume"}
-          className={styles["volume-high-and-mute-icon-container"]}
+          className={styles["icon-container"]}
           onClick={toggleVolume}
           style={{
             ...volumeIconStyle,

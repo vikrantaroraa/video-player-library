@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "./DefaultPlayAndPauseComponent.module.css";
+import styles from "src/components/reusable/DefaultPlayAndPauseComponent/index.module.css";
 
 const DefaultPlayAndPauseComponent = ({
   UserPlayIcon,
@@ -23,7 +23,7 @@ const DefaultPlayAndPauseComponent = ({
       tabIndex={"0"}
       onKeyDown={onKeyDown}
       onClick={playAndPauseVideo}
-      className={styles["play-and-pause-button-container"]}
+      className={styles["button-container"]}
       style={{
         ...playAndPauseStyle,
         ...controlsVariantArray[controlsVariant].playAndPauseVariantStyle,
