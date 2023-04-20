@@ -41,9 +41,11 @@ const DefaultDurationAndProgressBarComponent = ({
             height: controlsVariant.includes("vertical")
               ? `${videoProgress}%`
               : "100%",
-            width: controlsVariant.includes("horizontal")
-              ? `${videoProgress}%`
-              : "100%",
+            width:
+              controlsVariant.includes("bottom") ||
+              controlsVariant.includes("top")
+                ? `${videoProgress}%`
+                : "100%",
             ...progressBarStyle,
           }}
         ></div>

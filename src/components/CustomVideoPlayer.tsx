@@ -67,6 +67,8 @@ const CustomVideoPlayer = ({
   ];
 
   const controlsVariantArray = {
+    // If you change the variant names, remember to update the progress bar code
+    // that checks for the variant names for calculating width
     bottom: {
       controlsContainerStyle: {
         width: "100%",

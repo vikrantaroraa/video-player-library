@@ -1,9 +1,7 @@
 :root {
   --iconHoverBackgroundColor: #0aa356;
-  /* --playAndPauseButtonContainerHeight: 100%;s */
 }
 .button-container {
-  /* height: var(--playAndPauseButtonContainerHeight); */
   display: flex;
   align-items: center;
   justify-content: center;
