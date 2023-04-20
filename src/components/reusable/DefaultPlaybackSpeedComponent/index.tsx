@@ -19,6 +19,8 @@ const DefaultPlaybackSpeedComponent = ({
     : "Normal";
   return (
     <select
+      aria-label="playback-speed"
+      title="Playback Speed"
       className={styles["playback-speed-select"]}
       name="playback-speed"
       onChange={(event) => {

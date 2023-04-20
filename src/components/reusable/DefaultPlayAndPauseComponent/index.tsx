@@ -20,6 +20,8 @@ const DefaultPlayAndPauseComponent = ({
   return (
     <div
       role="button"
+      aria-label="play and pause button"
+      title="Play and pause button"
       tabIndex={"0"}
       onKeyDown={onKeyDown}
       onClick={playAndPauseVideo}

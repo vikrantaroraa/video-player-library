@@ -66,6 +66,8 @@ const DefaultVolumeComponent = forwardRef(
           }}
         >
           <input
+            aria-label="volume-slider"
+            title="Volume Slider"
             ref={ref}
             onChange={(e) => changeVolume(e)}
             className={styles["volume-range-input"]}

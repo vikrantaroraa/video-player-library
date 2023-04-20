@@ -303,6 +303,7 @@ const CustomVideoPlayer = ({
       <div className={styles["video-player-and-controls-container"]}>
         <div className={styles["player-container"]}>
           <video
+            tabIndex={0}
             aria-label="Video Player"
             onLoadedMetadata={calculateVideoDuration}
             onTimeUpdate={calculateVideoProgress}
