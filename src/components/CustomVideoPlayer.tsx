@@ -318,8 +318,14 @@ const CustomVideoPlayer = ({
     setIsPlaying(!isPlaying);
   };
 
+  const onKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      playAndPauseVideo();
+    }
+  };
+
   return (
-    <div className={styles["container"]}>
+    <div className={styles["container"]} onKeyDown={onKeyDown}>
       <div className={styles["video-player-and-controls-container"]}>
         <div className={styles["player-container"]}>
           <video
