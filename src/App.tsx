@@ -7,9 +7,9 @@ import MyPlayPauseAndDurationComponent from "./components/user-components/MyPlay
 
 import CustomVideoPlayer from "src/components/CustomVideoPlayer";
 import "./App.css";
-import { forwardRef } from "react";
+// import { forwardRef } from "react";
 
-export default function App() {
+function App() {
   return (
     <div className="App">
       <CustomVideoPlayer
@@ -119,3 +119,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

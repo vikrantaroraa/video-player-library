@@ -8,9 +8,10 @@
 
 .duration-container {
   display: flex;
-  align-items: right;
-  justify-content: center;
-  flex: 1;
+  align-items: center;
+  align-items: left;
+  height: 100%;
+  flex: 2.6;
 }
 
 .progress-bar-container {
@@ -20,6 +21,7 @@
   width: 100%;
   align-items: flex-end;
   cursor: pointer;
+  /* background-color: purple !important; */
 }
 
 .progress {

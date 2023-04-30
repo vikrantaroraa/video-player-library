@@ -24,7 +24,7 @@ const DefaultDurationAndProgressBarComponent = ({
       }}
     >
       <div className={styles["duration-container"]} style={videoDurationStyle}>
-        {videoProgressInSeconds}:{videoDuration}
+        {videoProgressInSeconds} / {videoDuration}
       </div>
 
       <div

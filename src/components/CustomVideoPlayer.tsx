@@ -9,7 +9,9 @@ import styles from "src/components/CustomVideoPlayer.module.css";
 const CustomVideoPlayer = ({
   // videoUrl = "https://www.w3schools.com/tags/movie.mp4",
   // videoUrl = "https://www.w3schools.com/tags/mov_bbb.mp4",
-  videoUrl = "https://jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
+  // videoUrl = "https://jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
+  // videoUrl = "https://blog.addpipe.com/static/the-web-is-always-changing.webm",
+  videoUrl = "https://blog.addpipe.com/static/short.mp4",
 
   // controls container props
   controlsVariant = "bottom",
@@ -52,7 +54,7 @@ const CustomVideoPlayer = ({
   const [videoDuration, setVideoDuration] = useState<number>(0);
   const [videoProgress, setVideoProgress] = useState<number>(0);
   const [videoProgressInSeconds, setVideoProgressInSeconds] =
-    useState<number>(0);
+    useState<string>("0:00");
   const video = useRef();
   const volumeRangeInput = useRef();
   const playbackSpeedOptions = [
@@ -77,11 +79,11 @@ const CustomVideoPlayer = ({
       },
       playAndPauseVariantStyle: {
         height: "100%",
-        width: "10%",
+        width: "6%",
       },
       durationAndProgressBarVariantStyle: {
         height: "100%",
-        width: "60%",
+        width: "64%",
       },
       volumeIconAndRangeVariantStyle: {
         height: "100%",
@@ -250,10 +252,6 @@ const CustomVideoPlayer = ({
     setIsPlaying(false);
   };
 
-  const calculateVideoDuration = () => {
-    setVideoDuration(video.current.duration.toFixed(0));
-  };
-
   const seekVideo = (event) => {
     const progressBarContainer = event.target.getBoundingClientRect();
     const totalWidth = progressBarContainer.width;
@@ -282,9 +280,31 @@ const CustomVideoPlayer = ({
       var percent_complete = videoCurrentTime / video.current.duration;
       const progress = percent_complete * 100;
       setVideoProgress(progress);
-      setVideoProgressInSeconds(videoCurrentTime.toFixed(0));
+      // setVideoProgressInSeconds(videoCurrentTime.toFixed(0));
+
+      // calculate video time
+      const minutes = Math.floor(video.current.currentTime / 60);
+      const seconds = Math.floor(video.current.currentTime - minutes * 60);
+      const minuteValue = minutes < 10 ? `0${minutes}` : minutes;
+      const secondValue = seconds < 10 ? `0${seconds}` : seconds;
+
+      const videoProgressInMinutesAndSeconds = `${minuteValue}:${secondValue}`;
+      setVideoProgressInSeconds(videoProgressInMinutesAndSeconds);
     }
   };
+
+  const calculateVideoDuration = () => {
+    if (!isNaN(video.current.duration)) {
+      const minutes = Math.floor(video.current.duration / 60);
+      const seconds = Math.floor(video.current.duration - minutes * 60);
+      const minuteValue = minutes < 10 ? `0${minutes}` : minutes;
+      const secondValue = seconds < 10 ? `0${seconds}` : seconds;
+
+      const videoDurationInMinutesAndSeconds = `${minuteValue}:${secondValue}`;
+      setVideoDuration(videoDurationInMinutesAndSeconds);
+    }
+  };
+
   useEffect(() => {
     calculateVideoDuration();
   }, []);
@@ -312,6 +332,7 @@ const CustomVideoPlayer = ({
             ref={video}
             width="100%"
             height="100%"
+            style={{ objectFit: "contain" }}
           >
             <source src={videoUrl} type="video/mp4" />
           </video>
