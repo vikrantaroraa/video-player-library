@@ -325,9 +325,9 @@ const CustomVideoPlayer = ({
   };
 
   return (
-    <div className={styles["container"]} onKeyDown={onKeyDown}>
+    <div className={styles["container"]}>
       <div className={styles["video-player-and-controls-container"]}>
-        <div className={styles["player-container"]}>
+        <div className={styles["player-container"]} onKeyDown={onKeyDown}>
           <video
             tabIndex={0}
             aria-label="Video Player"
