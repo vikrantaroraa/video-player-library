@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "video-player-library",
+  "name": "vikrant-video-player",
   "version": "0.0.1",
   "author": "Vikrant Arora",
   "main": "dist/bundle.js",
