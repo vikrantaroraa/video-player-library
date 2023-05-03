@@ -2,10 +2,13 @@
   --iconHoverBackgroundColor: #0aa356;
 }
 .button-container {
+  width: 6%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  /* styles to make degault storybook look fine */
+  color: #fff;
 }
 
 .button-container:hover {

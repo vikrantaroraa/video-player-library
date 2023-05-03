@@ -32,4 +32,11 @@
   justify-content: center;
   align-items: center;
   position: absolute;
+
+  /* styles to make degault storybook look fine */
+  background-color: #01da72;
+  opacity: 0.95;
+  height: 25px;
+  gap: 5px;
+  border: 1px solid #01da72;
 }

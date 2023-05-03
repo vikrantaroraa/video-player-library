@@ -33,7 +33,7 @@ function App() {
           color: "#fff",
           fontSize: 16,
           height: "100%",
-          width: "10%",
+          width: "6%",
         }}
         // duration and progress bar component props start
 
@@ -42,9 +42,9 @@ function App() {
         // )}
         durationAndProgressBarStyle={{
           // backgroundColor: "lightpink",
-          color: "green",
+          // color: "green",
           height: "100%",
-          width: "60%",
+          width: "64%",
         }}
         videoDurationStyle={{
           color: "#fff",
@@ -75,7 +75,7 @@ function App() {
           alignItems: "center",
           justifyContent: "center",
           height: "100%",
-          width: "50%",
+          width: "20%",
         }}
         volumeIconStyle={{
           color: "white",
@@ -99,7 +99,7 @@ function App() {
           "1.75x",
           "2x",
         ]}
-        userDefaultSelectedSpeedOption={"1.75x"}
+        userDefaultSelectedSpeedOption={"1x"}
         playbackSpeedSelectStyle={{
           border: "1px solid #fff",
           borderRadius: 3.5,

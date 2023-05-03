@@ -102,6 +102,7 @@ const CustomVideoPlayer = ({
       playbackSelectVariantStyle: {
         padding: "0 5px",
         height: "100%",
+        width: "10%",
       },
     },
     top: {
@@ -457,3 +458,5 @@ const CustomVideoPlayer = ({
 };
 
 export default CustomVideoPlayer;
+// export const controlsVariantArray;
+// export const playAndPauseVideo;
