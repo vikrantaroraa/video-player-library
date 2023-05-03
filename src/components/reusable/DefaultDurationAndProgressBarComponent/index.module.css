@@ -1,6 +1,6 @@
 .duration-and-progress-bar {
   display: flex;
-  width: 60%;
+  width: 64%;
   align-items: center;
   justify-content: center;
   gap: 5px;
@@ -9,23 +9,37 @@
 .duration-container {
   display: flex;
   align-items: center;
-  align-items: left;
+  justify-content: center;
   height: 100%;
   flex: 2.6;
+  /* background-color: red; */
+
+  /* styles to make degault storybook look fine */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .progress-bar-container {
   display: flex;
   flex: 10;
-  height: 100%;
   width: 100%;
   align-items: flex-end;
   cursor: pointer;
-  /* background-color: purple !important; */
+
+  /* styles to make degault storybook look fine */
+  background-color: #088a49;
+  border-radius: 5px;
+  height: 45%;
+  padding: 2px;
 }
 
 .progress {
   height: 100%;
   width: 100%;
   pointer-events: none;
+
+  /* styles to make degault storybook look fine */
+  background-color: #fff;
+  border-radius: 5px;
 }

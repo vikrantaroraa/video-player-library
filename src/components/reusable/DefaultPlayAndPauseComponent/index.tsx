@@ -3,6 +3,16 @@ import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "src/components/reusable/DefaultPlayAndPauseComponent/index.module.css";
 
+// interface DefaultPlayAndPauseComponentProps {
+//   isPlaying: boolean;
+//   playAndPauseVideo: () => void;
+//   controlsVariant: string;
+//   controlsVariantArray: object;
+//   playAndPauseStyle?: object;
+//   UserPlayIcon?: ReactNode;
+//   UserPauseIcon?: ReactNode;
+// }
+
 const DefaultPlayAndPauseComponent = ({
   UserPlayIcon,
   UserPauseIcon,

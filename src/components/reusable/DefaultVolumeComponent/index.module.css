@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  /* height: 100%; */
+  height: 100%;
   color: white;
 }
 
@@ -29,4 +29,5 @@
 .volume-range-input {
   display: flex;
   cursor: pointer;
+  accent-color: #fff;
 }
