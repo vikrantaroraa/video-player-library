@@ -8797,9 +8797,18 @@ var convertCurry = convert.bind(null, React.createElement);
 
 var e=[],t=[];function n(n,r){if(n&&"undefined"!=typeof document){var a,s=!0===r.prepend?"prepend":"append",d=!0===r.singleTag,i="string"==typeof r.container?document.querySelector(r.container):document.getElementsByTagName("head")[0];if(d){var u=e.indexOf(i);-1===u&&(u=e.push(i)-1,t[u]={}),a=t[u]&&t[u][s]?t[u][s]:t[u][s]=c();}else a=c();65279===n.charCodeAt(0)&&(n=n.substring(1)),a.styleSheet?a.styleSheet.cssText+=n:a.appendChild(document.createTextNode(n));}function c(){var e=document.createElement("style");if(e.setAttribute("type","text/css"),r.attributes)for(var t=Object.keys(r.attributes),n=0;n<t.length;n++)e.setAttribute(t[n],r.attributes[t[n]]);var a="prepend"===s?"afterbegin":"beforeend";return i.insertAdjacentElement(a,e),e}}
 
-var css$5 = ":root {\r\n  --iconHoverBackgroundColor: #0aa356;\r\n}\r\n.button-container {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n}\r\n\r\n.button-container:hover {\r\n  background-color: var(--iconHoverBackgroundColor);\r\n}\r\n";
+var css$5 = ":root {\r\n  --iconHoverBackgroundColor: #0aa356;\r\n}\r\n.button-container {\r\n  width: 6%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n  /* styles to make degault storybook look fine */\r\n  color: #fff;\r\n}\r\n\r\n.button-container:hover {\r\n  background-color: var(--iconHoverBackgroundColor);\r\n}\r\n";
 n(css$5,{});
 
+// interface DefaultPlayAndPauseComponentProps {
+//   isPlaying: boolean;
+//   playAndPauseVideo: () => void;
+//   controlsVariant: string;
+//   controlsVariantArray: object;
+//   playAndPauseStyle?: object;
+//   UserPlayIcon?: ReactNode;
+//   UserPauseIcon?: ReactNode;
+// }
 var DefaultPlayAndPauseComponent = function (_a) {
     var UserPlayIcon = _a.UserPlayIcon, UserPauseIcon = _a.UserPauseIcon, playAndPauseStyle = _a.playAndPauseStyle, playAndPauseVideo = _a.playAndPauseVideo, isPlaying = _a.isPlaying, controlsVariantArray = _a.controlsVariantArray, controlsVariant = _a.controlsVariant;
     var onKeyDown = function (event) {
@@ -8810,7 +8819,7 @@ var DefaultPlayAndPauseComponent = function (_a) {
     return (jsxRuntimeExports.jsx("div", __assign({ role: "button", "aria-label": "play and pause button", title: "Play and pause button", tabIndex: "0", onKeyDown: onKeyDown, onClick: playAndPauseVideo, className: css$5["button-container"], style: __assign(__assign({}, playAndPauseStyle), controlsVariantArray[controlsVariant].playAndPauseVariantStyle) }, { children: isPlaying ? (UserPauseIcon ? (jsxRuntimeExports.jsx(UserPauseIcon, {})) : (jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faPause }))) : UserPlayIcon ? (jsxRuntimeExports.jsx(UserPlayIcon, {})) : (jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faPlay })) })));
 };
 
-var css$4 = ".duration-and-progress-bar {\r\n  display: flex;\r\n  width: 60%;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 5px;\r\n}\r\n\r\n.duration-container {\r\n  display: flex;\r\n  align-items: center;\r\n  align-items: left;\r\n  height: 100%;\r\n  flex: 2.6;\r\n}\r\n\r\n.progress-bar-container {\r\n  display: flex;\r\n  flex: 10;\r\n  height: 100%;\r\n  width: 100%;\r\n  align-items: flex-end;\r\n  cursor: pointer;\r\n  /* background-color: purple !important; */\r\n}\r\n\r\n.progress {\r\n  height: 100%;\r\n  width: 100%;\r\n  pointer-events: none;\r\n}\r\n";
+var css$4 = ".duration-and-progress-bar {\r\n  display: flex;\r\n  width: 64%;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 5px;\r\n}\r\n\r\n.duration-container {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100%;\r\n  flex: 2.6;\r\n  /* background-color: red; */\r\n\r\n  /* styles to make degault storybook look fine */\r\n  color: #fff;\r\n  font-size: 12px;\r\n  font-weight: 600;\r\n}\r\n\r\n.progress-bar-container {\r\n  display: flex;\r\n  flex: 10;\r\n  width: 100%;\r\n  align-items: flex-end;\r\n  cursor: pointer;\r\n\r\n  /* styles to make degault storybook look fine */\r\n  background-color: #088a49;\r\n  border-radius: 5px;\r\n  height: 45%;\r\n  padding: 2px;\r\n}\r\n\r\n.progress {\r\n  height: 100%;\r\n  width: 100%;\r\n  pointer-events: none;\r\n\r\n  /* styles to make degault storybook look fine */\r\n  background-color: #fff;\r\n  border-radius: 5px;\r\n}\r\n";
 n(css$4,{});
 
 var DefaultDurationAndProgressBarComponent = function (_a) {
@@ -8824,7 +8833,7 @@ var DefaultDurationAndProgressBarComponent = function (_a) {
                             : "100%" }, progressBarStyle) }) }))] })));
 };
 
-var css$3 = ".volume-container {\r\n  display: flex;\r\n  width: 20%;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 5px;\r\n  /* height: 100%; */\r\n  color: white;\r\n}\r\n\r\n.icon-container {\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n}\r\n\r\n.icon-container:hover {\r\n  background-color: var(--iconHoverBackgroundColor);\r\n}\r\n\r\n.volume-range-input-container {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.volume-range-input {\r\n  display: flex;\r\n  cursor: pointer;\r\n}\r\n";
+var css$3 = ".volume-container {\r\n  display: flex;\r\n  width: 20%;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 5px;\r\n  height: 100%;\r\n  color: white;\r\n}\r\n\r\n.icon-container {\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n}\r\n\r\n.icon-container:hover {\r\n  background-color: var(--iconHoverBackgroundColor);\r\n}\r\n\r\n.volume-range-input-container {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.volume-range-input {\r\n  display: flex;\r\n  cursor: pointer;\r\n  accent-color: #fff;\r\n}\r\n";
 n(css$3,{});
 
 var DefaultVolumeComponent = reactExports.forwardRef(function (_a, ref) {
@@ -8839,7 +8848,7 @@ var DefaultVolumeComponent = reactExports.forwardRef(function (_a, ref) {
                     .volumeRangeInputContainerVariantStyle) }, { children: jsxRuntimeExports.jsx("input", { "aria-label": "volume-slider", title: "Volume Slider", ref: ref, onChange: function (e) { return changeVolume(e); }, className: css$3["volume-range-input"], type: "range", min: 0, max: 10, style: __assign(__assign({}, volumeRangeStyle), controlsVariantArray[controlsVariant].volumeRangeVariantStyle) }) }))] })));
 });
 
-var css$2 = ".playback-speed-select {\r\n  cursor: pointer;\r\n}\r\n";
+var css$2 = ".playback-speed-select {\r\n  width: 10%;\r\n  cursor: pointer;\r\n  /* styles to make degault storybook look fine */\r\n  border-radius: 3.5;\r\n  color: #fff;\r\n  font-size: 13.3px;\r\n  font-weight: 500;\r\n  background-color: rgba(0, 0, 0, 0.2);\r\n  border: 1px solid #fff;\r\n  border-radius: 3.5px;\r\n}\r\n";
 n(css$2,{});
 
 var DefaultPlaybackSpeedComponent = function (_a) {
@@ -8855,7 +8864,7 @@ var DefaultPlaybackSpeedComponent = function (_a) {
         }, defaultValue: defaultSelectedSpeedValue, style: __assign(__assign({}, playbackSpeedSelectStyle), controlsVariantArray[controlsVariant].playbackSelectVariantStyle) }, { children: optionsArray.map(function (speed, index) { return (jsxRuntimeExports.jsx("option", __assign({ value: speed, style: playbackSpeedSelectOptionsStyle }, { children: speed }), index)); }) })));
 };
 
-var css$1 = ":root {\r\n  --iconHoverBackgroundColor: #0aa356;\r\n}\r\n* {\r\n  padding: 0;\r\n  margin: 0;\r\n  box-sizing: border-box;\r\n}\r\n.container {\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n.video-player-and-controls-container {\r\n  position: relative;\r\n  height: 100%;\r\n  width: 100%;\r\n  background-color: #f4f4f4;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.player-container {\r\n  height: 100%;\r\n  width: 100%;\r\n  /* background-color: lightcoral; */\r\n}\r\n\r\n.controls-container {\r\n  display: none;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  position: absolute;\r\n}\r\n";
+var css$1 = ":root {\r\n  --iconHoverBackgroundColor: #0aa356;\r\n}\r\n* {\r\n  padding: 0;\r\n  margin: 0;\r\n  box-sizing: border-box;\r\n}\r\n.container {\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n.video-player-and-controls-container {\r\n  position: relative;\r\n  height: 100%;\r\n  width: 100%;\r\n  background-color: #f4f4f4;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.player-container {\r\n  height: 100%;\r\n  width: 100%;\r\n  /* background-color: lightcoral; */\r\n}\r\n\r\n.controls-container {\r\n  display: none;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  position: absolute;\r\n\r\n  /* styles to make degault storybook look fine */\r\n  background-color: #01da72;\r\n  opacity: 0.95;\r\n  height: 25px;\r\n  gap: 5px;\r\n  border: 1px solid #01da72;\r\n}\r\n";
 n(css$1,{});
 
 var CustomVideoPlayer = function (_a) {
@@ -8935,6 +8944,7 @@ var CustomVideoPlayer = function (_a) {
             playbackSelectVariantStyle: {
                 padding: "0 5px",
                 height: "100%",
+                width: "10%",
             },
         },
         top: {
@@ -8945,11 +8955,11 @@ var CustomVideoPlayer = function (_a) {
             },
             playAndPauseVariantStyle: {
                 height: "100%",
-                width: "10%",
+                width: "6%",
             },
             durationAndProgressBarVariantStyle: {
                 height: "100%",
-                width: "60%",
+                width: "64%",
             },
             volumeIconAndRangeVariantStyle: {
                 height: "100%",
@@ -8968,6 +8978,7 @@ var CustomVideoPlayer = function (_a) {
             playbackSelectVariantStyle: {
                 padding: "0 5px",
                 height: "100%",
+                width: "10%",
             },
         },
         verticalLeft: {
@@ -9140,10 +9151,15 @@ var CustomVideoPlayer = function (_a) {
         }
         setIsPlaying(!isPlaying);
     };
-    return (jsxRuntimeExports.jsx("div", __assign({ className: css$1["container"] }, { children: jsxRuntimeExports.jsxs("div", __assign({ className: css$1["video-player-and-controls-container"] }, { children: [jsxRuntimeExports.jsx("div", __assign({ className: css$1["player-container"] }, { children: jsxRuntimeExports.jsx("video", __assign({ tabIndex: 0, "aria-label": "Video Player", onLoadedMetadata: calculateVideoDuration, onTimeUpdate: calculateVideoProgress, onEnded: resetVariables, onClick: playAndPauseVideo, ref: video, width: "100%", height: "100%", style: { objectFit: "contain" } }, { children: jsxRuntimeExports.jsx("source", { src: videoUrl, type: "video/mp4" }) })) })), jsxRuntimeExports.jsxs("div", __assign({ className: css$1["controls-container"], style: __assign(__assign({}, controlsContainerStyle), controlsVariantArray[controlsVariant].controlsContainerStyle) }, { children: [UserPlayAndPauseComponent ? (jsxRuntimeExports.jsx(UserPlayAndPauseComponent, { UserPlayIcon: UserPlayIcon, UserPauseIcon: UserPauseIcon, isPlaying: isPlaying, playAndPauseVideo: playAndPauseVideo, playAndPauseStyle: playAndPauseStyle, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant })) : (jsxRuntimeExports.jsx(DefaultPlayAndPauseComponent, { UserPlayIcon: UserPlayIcon, UserPauseIcon: UserPauseIcon, isPlaying: isPlaying, playAndPauseVideo: playAndPauseVideo, playAndPauseStyle: playAndPauseStyle, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant })), UserDurationAndProgressBarComponent ? (jsxRuntimeExports.jsx(UserDurationAndProgressBarComponent, { seekVideo: seekVideo, seekVideoOnTabFocus: seekVideoOnTabFocus, videoProgressInSeconds: videoProgressInSeconds, videoDuration: videoDuration, videoProgress: videoProgress, progressBarStyle: progressBarStyle, videoDurationStyle: videoDurationStyle, progressBarContainerStyle: progressBarContainerStyle, durationAndProgressBarStyle: durationAndProgressBarStyle })) : (jsxRuntimeExports.jsx(DefaultDurationAndProgressBarComponent, { seekVideo: seekVideo, seekVideoOnTabFocus: seekVideoOnTabFocus, videoProgressInSeconds: videoProgressInSeconds, videoDuration: videoDuration, videoProgress: videoProgress, progressBarStyle: progressBarStyle, videoDurationStyle: videoDurationStyle, progressBarContainerStyle: progressBarContainerStyle, durationAndProgressBarStyle: durationAndProgressBarStyle, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant })), UserVolumeComponent ? (jsxRuntimeExports.jsx(UserVolumeComponent, { isMuted: isMuted, toggleVolume: toggleVolume, ref: volumeRangeInput, changeVolume: changeVolume, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant, UserVolumeHighIcon: UserVolumeHighIcon, UserVolumeMuteIcon: UserVolumeMuteIcon, volumeIconStyle: volumeIconStyle, volumeRangeStyle: volumeRangeStyle, volumeIconAndRangeStyle: volumeIconAndRangeStyle })) : (jsxRuntimeExports.jsx(DefaultVolumeComponent, { toggleVolume: toggleVolume, isMuted: isMuted, ref: volumeRangeInput, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant, changeVolume: changeVolume, UserVolumeHighIcon: UserVolumeHighIcon, UserVolumeMuteIcon: UserVolumeMuteIcon, volumeIconStyle: volumeIconStyle, volumeRangeStyle: volumeRangeStyle, volumeIconAndRangeStyle: volumeIconAndRangeStyle })), UserPlaybackSpeedComponent ? (jsxRuntimeExports.jsx(UserPlaybackSpeedComponent, { userPlaybackSpeedOptions: userPlaybackSpeedOptions, userDefaultSelectedSpeedOption: userDefaultSelectedSpeedOption, changePlaybackSpeed: changePlaybackSpeed, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant, playbackSpeedOptions: playbackSpeedOptions, playbackSpeedSelectStyle: playbackSpeedSelectStyle, playbackSpeedSelectOptionsStyle: playbackSpeedSelectOptionsStyle })) : (jsxRuntimeExports.jsx(DefaultPlaybackSpeedComponent, { playbackSpeedOptions: playbackSpeedOptions, changePlaybackSpeed: changePlaybackSpeed, userPlaybackSpeedOptions: userPlaybackSpeedOptions, userDefaultSelectedSpeedOption: userDefaultSelectedSpeedOption, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant, playbackSpeedSelectStyle: playbackSpeedSelectStyle, playbackSpeedSelectOptionsStyle: playbackSpeedSelectOptionsStyle }))] }))] })) })));
+    var onKeyDown = function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+            playAndPauseVideo();
+        }
+    };
+    return (jsxRuntimeExports.jsx("div", __assign({ className: css$1["container"] }, { children: jsxRuntimeExports.jsxs("div", __assign({ className: css$1["video-player-and-controls-container"] }, { children: [jsxRuntimeExports.jsx("div", __assign({ className: css$1["player-container"], onKeyDown: onKeyDown }, { children: jsxRuntimeExports.jsx("video", __assign({ tabIndex: 0, "aria-label": "Video Player", onLoadedMetadata: calculateVideoDuration, onTimeUpdate: calculateVideoProgress, onEnded: resetVariables, onClick: playAndPauseVideo, ref: video, width: "100%", height: "100%", style: { objectFit: "contain" } }, { children: jsxRuntimeExports.jsx("source", { src: videoUrl, type: "video/mp4" }) })) })), jsxRuntimeExports.jsxs("div", __assign({ className: css$1["controls-container"], style: __assign(__assign({}, controlsContainerStyle), controlsVariantArray[controlsVariant].controlsContainerStyle) }, { children: [UserPlayAndPauseComponent ? (jsxRuntimeExports.jsx(UserPlayAndPauseComponent, { UserPlayIcon: UserPlayIcon, UserPauseIcon: UserPauseIcon, isPlaying: isPlaying, playAndPauseVideo: playAndPauseVideo, playAndPauseStyle: playAndPauseStyle, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant })) : (jsxRuntimeExports.jsx(DefaultPlayAndPauseComponent, { UserPlayIcon: UserPlayIcon, UserPauseIcon: UserPauseIcon, isPlaying: isPlaying, playAndPauseVideo: playAndPauseVideo, playAndPauseStyle: playAndPauseStyle, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant })), UserDurationAndProgressBarComponent ? (jsxRuntimeExports.jsx(UserDurationAndProgressBarComponent, { seekVideo: seekVideo, seekVideoOnTabFocus: seekVideoOnTabFocus, videoProgressInSeconds: videoProgressInSeconds, videoDuration: videoDuration, videoProgress: videoProgress, progressBarStyle: progressBarStyle, videoDurationStyle: videoDurationStyle, progressBarContainerStyle: progressBarContainerStyle, durationAndProgressBarStyle: durationAndProgressBarStyle })) : (jsxRuntimeExports.jsx(DefaultDurationAndProgressBarComponent, { seekVideo: seekVideo, seekVideoOnTabFocus: seekVideoOnTabFocus, videoProgressInSeconds: videoProgressInSeconds, videoDuration: videoDuration, videoProgress: videoProgress, progressBarStyle: progressBarStyle, videoDurationStyle: videoDurationStyle, progressBarContainerStyle: progressBarContainerStyle, durationAndProgressBarStyle: durationAndProgressBarStyle, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant })), UserVolumeComponent ? (jsxRuntimeExports.jsx(UserVolumeComponent, { isMuted: isMuted, toggleVolume: toggleVolume, ref: volumeRangeInput, changeVolume: changeVolume, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant, UserVolumeHighIcon: UserVolumeHighIcon, UserVolumeMuteIcon: UserVolumeMuteIcon, volumeIconStyle: volumeIconStyle, volumeRangeStyle: volumeRangeStyle, volumeIconAndRangeStyle: volumeIconAndRangeStyle })) : (jsxRuntimeExports.jsx(DefaultVolumeComponent, { toggleVolume: toggleVolume, isMuted: isMuted, ref: volumeRangeInput, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant, changeVolume: changeVolume, UserVolumeHighIcon: UserVolumeHighIcon, UserVolumeMuteIcon: UserVolumeMuteIcon, volumeIconStyle: volumeIconStyle, volumeRangeStyle: volumeRangeStyle, volumeIconAndRangeStyle: volumeIconAndRangeStyle })), UserPlaybackSpeedComponent ? (jsxRuntimeExports.jsx(UserPlaybackSpeedComponent, { userPlaybackSpeedOptions: userPlaybackSpeedOptions, userDefaultSelectedSpeedOption: userDefaultSelectedSpeedOption, changePlaybackSpeed: changePlaybackSpeed, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant, playbackSpeedOptions: playbackSpeedOptions, playbackSpeedSelectStyle: playbackSpeedSelectStyle, playbackSpeedSelectOptionsStyle: playbackSpeedSelectOptionsStyle })) : (jsxRuntimeExports.jsx(DefaultPlaybackSpeedComponent, { playbackSpeedOptions: playbackSpeedOptions, changePlaybackSpeed: changePlaybackSpeed, userPlaybackSpeedOptions: userPlaybackSpeedOptions, userDefaultSelectedSpeedOption: userDefaultSelectedSpeedOption, controlsVariantArray: controlsVariantArray, controlsVariant: controlsVariant, playbackSpeedSelectStyle: playbackSpeedSelectStyle, playbackSpeedSelectOptionsStyle: playbackSpeedSelectOptionsStyle }))] }))] })) })));
 };
 
-var css = ".App {\n  width: 700px;\n  height: 500px;\n}\n";
+var css = ".App {\n  width: 1350px;\n  height: 500px;\n}\n";
 n(css,{});
 
 // import { forwardRef } from "react";
@@ -9166,7 +9182,7 @@ function App() {
                 color: "#fff",
                 fontSize: 16,
                 height: "100%",
-                width: "10%",
+                width: "6%",
             }, 
             // duration and progress bar component props start
             // UserDurationAndProgressBarComponent={(props) => (
@@ -9174,9 +9190,9 @@ function App() {
             // )}
             durationAndProgressBarStyle: {
                 // backgroundColor: "lightpink",
-                color: "green",
+                // color: "green",
                 height: "100%",
-                width: "60%",
+                width: "64%",
             }, videoDurationStyle: {
                 color: "#fff",
                 fontSize: 12,
@@ -9203,7 +9219,7 @@ function App() {
                 alignItems: "center",
                 justifyContent: "center",
                 height: "100%",
-                width: "50%",
+                width: "20%",
             }, volumeIconStyle: {
                 color: "white",
                 width: "100%",
@@ -9223,7 +9239,7 @@ function App() {
                 "1.5x",
                 "1.75x",
                 "2x",
-            ], userDefaultSelectedSpeedOption: "1.75x", playbackSpeedSelectStyle: {
+            ], userDefaultSelectedSpeedOption: "1x", playbackSpeedSelectStyle: {
                 border: "1px solid #fff",
                 borderRadius: 3.5,
                 color: "#fff",
