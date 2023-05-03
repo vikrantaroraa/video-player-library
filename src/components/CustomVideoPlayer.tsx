@@ -113,11 +113,11 @@ const CustomVideoPlayer = ({
       },
       playAndPauseVariantStyle: {
         height: "100%",
-        width: "10%",
+        width: "6%",
       },
       durationAndProgressBarVariantStyle: {
         height: "100%",
-        width: "60%",
+        width: "64%",
       },
       volumeIconAndRangeVariantStyle: {
         height: "100%",
@@ -136,6 +136,7 @@ const CustomVideoPlayer = ({
       playbackSelectVariantStyle: {
         padding: "0 5px",
         height: "100%",
+        width: "10%",
       },
     },
     verticalLeft: {
