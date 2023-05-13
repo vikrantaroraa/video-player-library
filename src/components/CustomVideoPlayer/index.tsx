@@ -4,8 +4,8 @@ import DefaultDurationAndProgressBarComponent from "src/components/reusable/Defa
 import DefaultVolumeComponent from "src/components/reusable/DefaultVolumeComponent";
 import DefaultPlaybackSpeedComponent from "src/components/reusable/DefaultPlaybackSpeedComponent";
 import { useEffect, useRef, useState } from "react";
-import { CustomVideoPlayerProps } from "src/CustomVideoPlayer.interface";
-import styles from "src/components/CustomVideoPlayer.module.css";
+import { CustomVideoPlayerProps } from "src/components/CustomVideoPlayer/index.interface";
+import styles from "src/components/CustomVideoPlayer/index.module.css";
 const CustomVideoPlayer = ({
   // videoUrl = "https://www.w3schools.com/tags/movie.mp4",
   // videoUrl = "https://www.w3schools.com/tags/mov_bbb.mp4",
@@ -458,6 +458,4 @@ const CustomVideoPlayer = ({
   );
 };
 
-export default CustomVideoPlayer;
-// export const controlsVariantArray;
-// export const playAndPauseVideo;
+export { CustomVideoPlayer };

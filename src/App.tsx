@@ -1,13 +1,6 @@
 // @ts-nocheck
-import MyPlayAndPauseComponent from "./components/user-components/MyPlayAndPauseComponent";
-import MyDurationAndProgressBarComponentComponent from "./components/user-components/MyDurationAndProgressBarComponentComponent";
-import MyVolumeComponent from "./components/user-components/MyVolumeComponent";
-import MyPlaybackSpeedComponent from "./components/user-components/MyPlaybackSpeedComponent";
-import MyPlayPauseAndDurationComponent from "./components/user-components/MyPlayPauseAndDurationComponent";
-
 import CustomVideoPlayer from "src/components/CustomVideoPlayer";
 import "./App.css";
-// import { forwardRef } from "react";
 
 function App() {
   return (
@@ -15,19 +8,12 @@ function App() {
       <CustomVideoPlayer
         controlsVariant={"bottom"}
         controlsContainerStyle={{
-          backgroundColor: "#01da72",
           opacity: 0.95,
           height: 25,
           gap: 5,
           border: "1px solid #01da72",
         }}
         // play and pause component props start (check how to change width from here only)
-
-        // UserPlayIcon={() => <h4>Play</h4>}
-        // UserPauseIcon={() => <h4>Pause</h4>}
-        // UserPlayAndPauseComponent={(props) => (
-        //   <MyPlayAndPauseComponent {...props} />
-        // )}
         playAndPauseStyle={{
           borderRadius: 2,
           color: "#fff",
@@ -36,13 +22,7 @@ function App() {
           width: "6%",
         }}
         // duration and progress bar component props start
-
-        // UserDurationAndProgressBarComponent={(props) => (
-        //   <MyDurationAndProgressBarComponentComponent {...props} />
-        // )}
         durationAndProgressBarStyle={{
-          // backgroundColor: "lightpink",
-          // color: "green",
           height: "100%",
           width: "64%",
         }}
@@ -62,16 +42,7 @@ function App() {
           borderRadius: 5,
         }}
         // volume icon and range props start
-
-        // UserVolumeComponent={forwardRef((props, ref) => (
-        //   <MyVolumeComponent {...props} ref={ref} />
-        // ))}
-        // UserVolumeHighIcon={() => <h1>High</h1>}
-        // UserVolumeMuteIcon={() => <h1>Muted</h1>}
         volumeIconAndRangeStyle={{
-          // backgroundColor: "lightsalmon",
-          color: "white",
-          // fontSize: 10,
           alignItems: "center",
           justifyContent: "center",
           height: "100%",
@@ -85,10 +56,6 @@ function App() {
           accentColor: "#fff",
         }}
         // playback select props start
-
-        // UserPlaybackSpeedComponent={(props) => (
-        //   <MyPlaybackSpeedComponent {...props} />
-        // )}
         userPlaybackSpeedOptions={[
           "0.25x",
           "0.5x",
@@ -111,7 +78,6 @@ function App() {
           width: "10%",
         }}
         playbackSpeedSelectOptionsStyle={{
-          backgroundColor: "#fff",
           color: "#000",
           fontWeight: 400,
         }}

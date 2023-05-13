@@ -22,7 +22,7 @@ export interface CustomVideoPlayerProps {
 
   // volume icon and range styles
   UserVolumeHighIcon?: ReactNode;
-  UserVolumeMutecon?: ReactNode;
+  UserVolumeMuteIcon?: ReactNode;
   volumeIconAndRangeStyle?: object;
   volumeIconStyle?: object;
   volumeRangeStyle?: object;

@@ -10,3 +10,7 @@
   border: 1px solid #fff;
   border-radius: 3.5px;
 }
+
+.playback-speed-select option {
+  background-color: #fff;
+}

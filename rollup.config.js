@@ -3,18 +3,21 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import styles from "rollup-plugin-styles";
 import tsConfigPaths from "rollup-plugin-tsconfig-paths";
-import { babel } from "@rollup/plugin-babel";
-import terser from "@rollup/plugin-terser";
+// import { babel } from "@rollup/plugin-babel";
+// import terser from "@rollup/plugin-terser";
 
 const rollupConfig = {
-  input: "src/App.tsx",
+  input: "src/index.tsx",
   output: {
     file: "dist/bundle.js",
     format: "cjs",
-    exports: "default",
   },
   plugins: [
-    babel({ babelHelpers: "bundled", exclude: "node_modules/**" }),
+    // babel({
+    //   babelHelpers: "bundled",
+    //   exclude: "node_modules/**",
+    //   presets: ["@babel/preset-react", "@babel/preset-typescript"],
+    // }),
     tsConfigPaths(),
     // node resolve will also work WITHOUT options object provided below. See what browser: true and
     // extensions: [array of extensions] in options object is used for
@@ -25,7 +28,7 @@ const rollupConfig = {
     commonjs(),
     typescript({ tsconfig: "./tsconfig.json" }),
     styles({ minimize: true }),
-    terser(),
+    // terser(),
   ],
 };
 
